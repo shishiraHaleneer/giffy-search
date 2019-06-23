@@ -15,8 +15,7 @@ class App extends React.Component {
         let newArray = [];
         //console.log("onResults | items",items.data);
         if(items && items.data && items.data.data && items.data.data.length){
-            items.data.data.forEach(item => { newArray.push({id:item.id,gifUrl:item.images.preview_gif.url,stillUrl:item.images.preview.url}); });
-
+            items.data.data.forEach(item => { newArray.push({id:item.id,gifUrl:item.images.downsized.url,stillUrl:item.images.downsized_still.url}); });
             this.setState({gifItemsList:newArray})
         }
     }
