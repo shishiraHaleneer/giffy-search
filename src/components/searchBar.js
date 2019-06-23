@@ -6,7 +6,9 @@ class SearchBar extends React.Component {
         super();
         this.state = { inputValue: '' }
         this.searchKeyword = this.searchKeyword.bind(this);
+
     }
+
 
     searchKeyword(evt){
         evt.preventDefault();

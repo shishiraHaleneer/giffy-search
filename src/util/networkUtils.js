@@ -15,10 +15,14 @@ var NetworkUtils = (function () {
             console.log("getGifDetailsBasedOnKw ",url);
              axios.get(url)
                  .then(function (response) {
-                     console.log("resp ",response);
                      callback(response);
                  })
+        },
+
+        getApiUrl: function (keyword) {
+            return GIF_SITE_URL + '?q=' + keyword;
         }
+
     };
 })();
 
