@@ -21,7 +21,7 @@ const isLocalhost = Boolean(
 );
 
 export function register(config) {
-  if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+  if ( 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
     if (publicUrl.origin !== window.location.origin) {
@@ -133,3 +133,35 @@ export function unregister() {
     });
   }
 }
+
+
+var CACHE_NAME = 'my-site-cache-v2';
+var urlsToCache = [
+  '/static/css/main.css',
+  '/static/js/main.js'
+];
+window.self.addEventListener('install', function(event) {
+
+    // Perform some task and fetchs
+});
+
+window.self.addEventListener('activate', function(event) {
+    console.log("activated");
+  // Perform some task
+
+});
+
+window.self.addEventListener('fetch', function(event) {
+    console.log("event ",event.request);
+  event.respondWith(
+      //ccache all fetch responses
+    caches.open(CACHE_NAME).then(function(cache) {
+      return cache.match(event.request).then(function (response) {
+        return response || fetch(event.request).then(function(response) {
+          cache.put(event.request, response.clone());
+          return response;
+        });
+      });
+    })
+  );
+});
