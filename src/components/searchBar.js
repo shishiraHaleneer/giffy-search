@@ -11,6 +11,7 @@ class SearchBar extends React.Component {
     searchKeyword(evt){
         evt.preventDefault();
         let that = this;
+        console.log('Query to giff search', this.state.inputValue);
         NetworkUtils.getGifDetailsBasedOnKw(this.state.inputValue,0,10,function (resp) {
             that.props.onSearchResult(resp);
         });

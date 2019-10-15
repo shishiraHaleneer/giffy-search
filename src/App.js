@@ -13,7 +13,7 @@ class App extends React.Component {
 
     onResults(items){
         let newArray = [];
-        //console.log("onResults | items",items.data);
+        console.log("onResults | items",items.data.length);
         if(items && items.data && items.data.data && items.data.data.length){
             items.data.data.forEach(item => { newArray.push({id:item.id,gifUrl:item.images.original.url,stillUrl:item.images.original_still.url}); });
 
