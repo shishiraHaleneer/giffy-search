@@ -1,4 +1,7 @@
-# Pull Request Template
+# New Pull Request 
+
+## Jira Link
+ - link :
 
 ## Description
 
@@ -21,7 +24,7 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 
 - [ ] Unit test cases
 - [ ] Integration test cases
-- [] E2E test cases
+- [ ] E2E test cases
 
 **Test Configuration**:
 
