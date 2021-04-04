@@ -13,7 +13,7 @@ class App extends React.Component {
 
     onResults(items){
         let newArray = [];
-        //console.log("onResults | items",items.data);
+        console.log("onResults | items",items.data);
         if(items && items.data && items.data.data && items.data.data.length){
             items.data.data.forEach(item => { newArray.push({id:item.id,gifUrl:item.images.original.url,stillUrl:item.images.original_still.url}); });
 
@@ -26,7 +26,7 @@ class App extends React.Component {
             this.state.gifItemsList.map(item =>
                 <GifItem key={item.id} gif={item.gifUrl} still={item.stillUrl}></GifItem>);
 
-       // console.log("gifDomList ",gifDomList);
+       console.log("gifDomList ",gifDomList);
         return (
 
             <div className="App">
